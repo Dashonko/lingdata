@@ -15,6 +15,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 /* ===== Шапка ===== */
@@ -56,6 +57,17 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Явно указываем, что контент не должен вылезать */
+    overflow: hidden;
+}
+
+/* Заголовки и параграфы внутри секций центрируем */
+section h2,
+section > p {
+    width: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ===== Главный экран ===== */
@@ -63,8 +75,15 @@ section {
     background-color: #ECE6DF;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 70px;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.home > div {
+    max-width: 650px;
 }
 
 .home img {
@@ -74,6 +93,7 @@ section {
     object-fit: cover;
     border-radius: 0;
     border: 8px solid #0F3F49;
+    flex-shrink: 0;
 }
 
 .home h2 {
@@ -92,6 +112,8 @@ section {
     max-width: 650px;
     font-size: clamp(18px, 2.5vw, 22px);
     line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ===== Заголовки и текст секций ===== */
@@ -156,11 +178,13 @@ section p {
 .hobbies {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 25px;
     flex-wrap: wrap;
     max-width: 1000px;
-    margin-top: 30px;
+    margin: 30px auto 0;
     width: 100%;
+    padding: 0;
 }
 
 .hobbies div {
@@ -169,16 +193,22 @@ section p {
     padding: 25px;
     background-color: #ECE6DF;
     color: #0F3F49;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 1 auto;
 }
 
 .hobbies h3 {
     font-size: clamp(20px, 3vw, 25px);
     color: #7F0508;
+    margin-top: 0;
 }
 
 .hobbies p {
     color: #0F3F49 !important;
     font-size: clamp(16px, 2vw, 18px);
+    margin-bottom: 0;
 }
 
 /* ===== Музыка ===== */
@@ -196,8 +226,10 @@ section p {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    margin: 30px auto 0;
     width: 100%;
+    padding: 0;
 }
 
 .music a {
@@ -207,6 +239,7 @@ section p {
     text-decoration: none;
     font-size: clamp(18px, 2.4vw, 21px);
     font-weight: bold;
+    flex: 0 1 auto;
 }
 
 .music a:hover {
@@ -229,6 +262,7 @@ footer p {
     section {
         min-height: auto;
         padding: 70px 25px;
+        overflow: visible;
     }
 
     .home {
@@ -266,26 +300,46 @@ footer p {
     }
 
     section {
-        min-height: auto;
+        /* Убираем min-height — он больше не нужен */
+        min-height: 0;
         padding: 60px 18px;
+        overflow: visible;
+        display: block; /* вместо flex — контент просто идёт сверху вниз */
     }
 
+    section h2,
+    section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Главный экран — стек по вертикали */
     .home {
+        display: flex;
         flex-direction: column;
-        gap: 30px;
+        align-items: center;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .home > div {
+        width: 100%;
     }
 
     .home img {
         width: 200px;
         height: 200px;
+        margin: 0 auto;
     }
 
     .home h2 {
-        font-size: 45px;
+        font-size: 42px;
+        margin: 5px;
     }
 
     .home h3 {
-        font-size: 25px;
+        font-size: 24px;
+        margin: 10px;
     }
 
     .home p {
@@ -293,7 +347,8 @@ footer p {
     }
 
     section h2 {
-        font-size: 38px;
+        font-size: 36px;
+        margin-bottom: 25px;
     }
 
     section p {
@@ -301,9 +356,11 @@ footer p {
         line-height: 1.6;
     }
 
+    /* Хобби — в одну колонку */
     .hobbies {
         flex-direction: column;
         align-items: center;
+        gap: 18px;
     }
 
     .hobbies div {
@@ -311,9 +368,11 @@ footer p {
         max-width: 360px;
     }
 
+    /* Музыка — в одну колонку */
     .music {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
         width: 100%;
     }
 
@@ -323,12 +382,17 @@ footer p {
         width: 100%;
         max-width: 360px;
     }
+
+    .button {
+        margin-top: 25px;
+        padding: 14px 30px;
+    }
 }
 
 /* ===== Очень узкие экраны (до 380px) ===== */
 @media (max-width: 380px) {
     header h1 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     nav a {
@@ -342,14 +406,33 @@ footer p {
     }
 
     .home h2 {
-        font-size: 34px;
+        font-size: 32px;
+    }
+
+    .home h3 {
+        font-size: 20px;
     }
 
     section h2 {
-        font-size: 30px;
+        font-size: 28px;
+    }
+
+    section p,
+    .home p {
+        font-size: 17px;
     }
 
     .button {
-        padding: 12px 24px;
+        padding: 12px 22px;
+        font-size: 16px;
+    }
+
+    .hobbies div {
+        padding: 18px;
+    }
+
+    .music a {
+        padding: 14px 20px;
+        font-size: 17px;
     }
 }
