@@ -4,35 +4,30 @@ html {
 
 body {
     margin: 0;
-
     font-family: Georgia, "Times New Roman", serif;
-
     background-color: #ECE6DF;
-
     color: #0F3F49;
-
     text-align: center;
-
     font-size: 20px;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-
+/* ===== Шапка ===== */
 header {
     background-color: #0F3F49;
-
     color: #ECE6DF;
-
     padding: 35px 20px;
 }
 
 header h1 {
     margin: 15px 0 30px;
-
     color: #ECE6DF;
-
-    font-size: 38px;
-
+    font-size: clamp(26px, 5vw, 38px);
     text-transform: uppercase;
 }
 
@@ -42,130 +37,87 @@ nav {
 
 nav a {
     color: #ECE6DF;
-
     text-decoration: none;
-
     margin: 8px 12px;
-
-    font-size: 18px;
+    font-size: clamp(15px, 2.2vw, 18px);
+    display: inline-block;
 }
 
 nav a:hover {
     text-decoration: underline;
-
     color: #ECE6DF;
-
-    text-decoration: none;
-
-    margin: 8px 12px;
-
-    font-size: 18px;
 }
 
-
-
+/* ===== Секции ===== */
 section {
-    height: 90vh;
-
+    min-height: 90vh;
     padding: 80px 30px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 }
 
-
+/* ===== Главный экран ===== */
 .home {
     background-color: #ECE6DF;
-
     display: flex;
-
     flex-direction: row;
-
     gap: 70px;
+    flex-wrap: wrap;
 }
 
 .home img {
     width: 280px;
-
     height: 280px;
-
+    max-width: 100%;
     object-fit: cover;
-
     border-radius: 0;
-
     border: 8px solid #0F3F49;
 }
 
 .home h2 {
-    font-size: 65px;
-
+    font-size: clamp(38px, 8vw, 65px);
     color: #0F3F49;
-
     margin: 10px;
 }
 
 .home h3 {
-    font-size: 30px;
-
+    font-size: clamp(22px, 4vw, 30px);
     color: #7F0508;
-
     margin: 20px;
 }
 
 .home p {
     max-width: 650px;
-
-    font-size: 22px;
-
+    font-size: clamp(18px, 2.5vw, 22px);
     line-height: 1.6;
 }
 
-
-
+/* ===== Заголовки и текст секций ===== */
 section h2 {
-    font-size: 60px;
-
+    font-size: clamp(34px, 7vw, 60px);
     color: #0F3F49;
-
     margin-bottom: 35px;
-
     text-transform: uppercase;
 }
 
-
-
 section p {
     max-width: 750px;
-
-    font-size: 22px;
-
+    font-size: clamp(18px, 2.5vw, 22px);
     line-height: 1.7;
-
     margin: 12px auto;
 }
 
-
-
+/* ===== Кнопка ===== */
 .button {
     display: inline-block;
-
     margin-top: 35px;
-
     padding: 15px 35px;
-
     background-color: #7F0508;
-
     color: #ECE6DF;
-
     text-decoration: none;
-
-    font-size: 20px;
-
+    font-size: clamp(17px, 2.2vw, 20px);
     font-weight: bold;
 }
 
@@ -173,86 +125,65 @@ section p {
     background-color: #0F3F49;
 }
 
-
-
+/* ===== Город ===== */
 #city {
     background-color: #0F3F49;
-
     color: #ECE6DF;
 }
 
-#city h2 {
-    color: #ECE6DF;
-}
-
+#city h2,
 #city p {
     color: #ECE6DF;
 }
 
-
+/* ===== Школа ===== */
 #school {
     background-color: #ECE6DF;
-
     color: #0F3F49;
 }
 
-
-
+/* ===== Хобби ===== */
 #hobby {
     background-color: #0F3F49;
-
     color: #ECE6DF;
 }
 
-#hobby h2 {
-    color: #ECE6DF;
-}
-
+#hobby h2,
 #hobby p {
     color: #ECE6DF;
 }
 
 .hobbies {
     display: flex;
-
     justify-content: center;
-
     gap: 25px;
-
     flex-wrap: wrap;
-
     max-width: 1000px;
-
     margin-top: 30px;
+    width: 100%;
 }
 
 .hobbies div {
     width: 250px;
-
+    max-width: 100%;
     padding: 25px;
-
     background-color: #ECE6DF;
-
     color: #0F3F49;
 }
 
 .hobbies h3 {
-    font-size: 25px;
-
+    font-size: clamp(20px, 3vw, 25px);
     color: #7F0508;
 }
 
 .hobbies p {
     color: #0F3F49 !important;
-
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
 }
 
-
-
+/* ===== Музыка ===== */
 #music {
     background-color: #ECE6DF;
-
     color: #0F3F49;
 }
 
@@ -260,30 +191,21 @@ section p {
     color: #0F3F49;
 }
 
-
 .music {
     display: flex;
-
     gap: 20px;
-
     flex-wrap: wrap;
-
     justify-content: center;
-
     margin-top: 30px;
+    width: 100%;
 }
 
 .music a {
     padding: 18px 35px;
-
     background-color: #0F3F49;
-
     color: #ECE6DF;
-
     text-decoration: none;
-
-    font-size: 21px;
-
+    font-size: clamp(18px, 2.4vw, 21px);
     font-weight: bold;
 }
 
@@ -291,27 +213,46 @@ section p {
     background-color: #7F0508;
 }
 
-
-
+/* ===== Подвал ===== */
 footer {
     background-color: #0F3F49;
-
     color: #ECE6DF;
-
     padding: 30px;
 }
 
 footer p {
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
 }
 
+/* ===== Планшеты (до 900px) ===== */
+@media (max-width: 900px) {
+    section {
+        min-height: auto;
+        padding: 70px 25px;
+    }
 
+    .home {
+        gap: 40px;
+    }
 
+    .home img {
+        width: 240px;
+        height: 240px;
+    }
 
+    .hobbies div {
+        width: 45%;
+    }
+}
+
+/* ===== Мобильные (до 600px) ===== */
 @media (max-width: 600px) {
-
     body {
         font-size: 18px;
+    }
+
+    header {
+        padding: 25px 15px;
     }
 
     header h1 {
@@ -320,21 +261,22 @@ footer p {
 
     nav a {
         display: inline-block;
-
-        margin: 6px 3px;
-
+        margin: 6px 5px;
         font-size: 16px;
+    }
+
+    section {
+        min-height: auto;
+        padding: 60px 18px;
     }
 
     .home {
         flex-direction: column;
-
         gap: 30px;
     }
 
     .home img {
         width: 200px;
-
         height: 200px;
     }
 
@@ -350,39 +292,64 @@ footer p {
         font-size: 19px;
     }
 
-    section {
-        padding: 60px 18px;
-    }
-
     section h2 {
         font-size: 38px;
     }
 
     section p {
         font-size: 19px;
-
         line-height: 1.6;
     }
 
     .hobbies {
         flex-direction: column;
-
         align-items: center;
     }
 
     .hobbies div {
-        width: 80%;
+        width: 100%;
+        max-width: 360px;
     }
 
     .music {
         flex-direction: column;
-
-        width: 80%;
+        align-items: center;
+        width: 100%;
     }
 
     .music a {
         text-align: center;
-
         font-size: 19px;
+        width: 100%;
+        max-width: 360px;
+    }
+}
+
+/* ===== Очень узкие экраны (до 380px) ===== */
+@media (max-width: 380px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px 3px;
+    }
+
+    .home img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .home h2 {
+        font-size: 34px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    .button {
+        padding: 12px 24px;
     }
 }
