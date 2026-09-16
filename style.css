@@ -71,7 +71,6 @@ section p {
     line-height: 1.6;
 }
 
-/* HOME */
 
 .home {
     display: flex;
@@ -86,7 +85,6 @@ section p {
 
 .home h2 {
     margin: 0 0 10px;
-    color: #0F3F49;
     font-size: 60px;
 }
 
@@ -128,7 +126,7 @@ section p {
 #city h2,
 #city p,
 #hobby h2,
-#hobby p {
+{
     color: #ECE6DF;
 }
 
@@ -153,7 +151,7 @@ section p {
 }
 
 .hobbies p {
-    color: #0F3F49 !important;
+    color: #0F3F49;
     font-size: 18px;
 }
 
