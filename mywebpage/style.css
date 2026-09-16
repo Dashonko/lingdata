@@ -2,258 +2,226 @@ html {
     scroll-behavior: smooth;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    background-color: #ECE6DF;
+    background: #ECE6DF;
     color: #0F3F49;
     text-align: center;
-    font-size: 20px;
-    overflow-x: hidden;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
-/* ===== Шапка ===== */
 header {
-    background-color: #0F3F49;
+    background: #0F3F49;
     color: #ECE6DF;
-    padding: 35px 20px;
+    padding: 25px 15px;
 }
 
 header h1 {
-    margin: 15px 0 30px;
-    color: #ECE6DF;
-    font-size: clamp(26px, 5vw, 38px);
-    text-transform: uppercase;
+    margin: 0 0 15px;
+    font-size: 20px;
 }
 
 nav {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
 }
 
 nav a {
     color: #ECE6DF;
     text-decoration: none;
-    margin: 8px 12px;
-    font-size: clamp(15px, 2.2vw, 18px);
-    display: inline-block;
+    font-size: 18px;
 }
 
-nav a:hover {
+nav a:hover{
     text-decoration: underline;
-    color: #ECE6DF;
+}
+.button:hover {
+    background-color: #0F3F49;
 }
 
-/* ===== Секции ===== */
 section {
     min-height: 90vh;
-    padding: 80px 30px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Явно указываем, что контент не должен вылезать */
-    overflow: hidden;
 }
 
-/* Заголовки и параграфы внутри секций центрируем */
-section h2,
-section > p {
-    width: 100%;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
+section h2 {
+    margin: 0 0 20px;
+    font-size: 50px;
 }
 
-/* ===== Главный экран ===== */
+section p {
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
 .home {
-    background-color: #ECE6DF;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 70px;
-    flex-wrap: wrap;
-    width: 100%;
+    gap: 50px;
 }
 
 .home > div {
-    max-width: 650px;
+    max-width: 600px;
+}
+
+.home h2 {
+    margin: 0 0 10px;
+    color: #0F3F49;
+    font-size: 60px;
+}
+
+.home h3 {
+    margin: 0 0 15px;
+    color: #7F0508;
+    font-size: 28px;
+}
+
+.home p {
+    margin: 0 auto;
 }
 
 .home img {
     width: 280px;
     height: 280px;
-    max-width: 100%;
     object-fit: cover;
-    border-radius: 0;
-    border: 8px solid #0F3F49;
-    flex-shrink: 0;
+    border: 6px solid #0F3F49;
 }
 
-.home h2 {
-    font-size: clamp(38px, 8vw, 65px);
-    color: #0F3F49;
-    margin: 10px;
-}
 
-.home h3 {
-    font-size: clamp(22px, 4vw, 30px);
-    color: #7F0508;
-    margin: 20px;
-}
-
-.home p {
-    max-width: 650px;
-    font-size: clamp(18px, 2.5vw, 22px);
-    line-height: 1.6;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ===== Заголовки и текст секций ===== */
-section h2 {
-    font-size: clamp(34px, 7vw, 60px);
-    color: #0F3F49;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-}
-
-section p {
-    max-width: 750px;
-    font-size: clamp(18px, 2.5vw, 22px);
-    line-height: 1.7;
-    margin: 12px auto;
-}
-
-/* ===== Кнопка ===== */
 .button {
     display: inline-block;
-    margin-top: 35px;
-    padding: 15px 35px;
-    background-color: #7F0508;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #7F0508;
     color: #ECE6DF;
     text-decoration: none;
-    font-size: clamp(17px, 2.2vw, 20px);
     font-weight: bold;
 }
 
-.button:hover {
-    background-color: #0F3F49;
-}
 
-/* ===== Город ===== */
-#city {
-    background-color: #0F3F49;
+#city,
+#hobby {
+    background: #0F3F49;
     color: #ECE6DF;
 }
 
 #city h2,
-#city p {
-    color: #ECE6DF;
-}
-
-/* ===== Школа ===== */
-#school {
-    background-color: #ECE6DF;
-    color: #0F3F49;
-}
-
-/* ===== Хобби ===== */
-#hobby {
-    background-color: #0F3F49;
-    color: #ECE6DF;
-}
-
+#city p,
 #hobby h2,
 #hobby p {
     color: #ECE6DF;
 }
 
+
 .hobbies {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 30px auto 0;
+    gap: 20px;
     width: 100%;
-    padding: 0;
+    max-width: 900px;
 }
 
 .hobbies div {
-    width: 250px;
-    max-width: 100%;
-    padding: 25px;
-    background-color: #ECE6DF;
+    width: 30%;
+    padding: 20px;
+    background: #ECE6DF;
     color: #0F3F49;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 0 1 auto;
 }
 
 .hobbies h3 {
-    font-size: clamp(20px, 3vw, 25px);
     color: #7F0508;
-    margin-top: 0;
 }
 
 .hobbies p {
-    color: #0F3F49 !important;
-    font-size: clamp(16px, 2vw, 18px);
-    margin-bottom: 0;
+    color: #0F3F49;
+    font-size: 18px;
 }
 
-/* ===== Музыка ===== */
-#music {
-    background-color: #ECE6DF;
-    color: #0F3F49;
-}
-
-#music h2 {
-    color: #0F3F49;
-}
 
 .music {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin: 30px auto 0;
-    width: 100%;
-    padding: 0;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .music a {
-    padding: 18px 35px;
-    background-color: #0F3F49;
+    padding: 14px 25px;
+    background: #0F3F49;
     color: #ECE6DF;
     text-decoration: none;
-    font-size: clamp(18px, 2.4vw, 21px);
     font-weight: bold;
-    flex: 0 1 auto;
 }
 
-.music a:hover {
-    background-color: #7F0508;
-}
+/* FOOTER */
 
-/* ===== Подвал ===== */
 footer {
-    background-color: #0F3F49;
+    padding: 20px;
+    background: #0F3F49;
     color: #ECE6DF;
-    padding: 30px;
 }
 
-footer p {
-    font-size: clamp(15px, 2vw, 18px);
-}
+/* PHONE */
 
+@media (max-width: 700px) {
+
+    section {
+        min-height: auto;
+        padding: 50px 15px;
+    }
+
+    .home {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .home h2 {
+        font-size: 45px;
+    }
+
+    .home h3 {
+        font-size: 24px;
+    }
+
+    .home img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hobbies {
+        flex-direction: column;
+    }
+
+    .hobbies div {
+        width: 100%;
+    }
+
+    .music {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .music a,
+    .button {
+        width: 100%;
+    }
+}
