@@ -127,7 +127,7 @@ section p {
 #city h2,
 #city p,
 #hobby h2,
-#hobby p {
+{
     color: #ECE6DF;
 }
 
@@ -172,7 +172,6 @@ section p {
     font-weight: bold;
 }
 
-/* FOOTER */
 
 footer {
     padding: 20px;
@@ -180,7 +179,6 @@ footer {
     color: #ECE6DF;
 }
 
-/* PHONE */
 
 @media (max-width: 700px) {
 
